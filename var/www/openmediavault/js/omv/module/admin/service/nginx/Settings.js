@@ -48,6 +48,7 @@ Ext.define('OMV.module.admin.service.nginx.Settings', {
                         'text'
                     ],
                     data: [
+                        [0, 'Default'],
                         [32, '32'],
                         [64, '64'],
                         [128, '128'],

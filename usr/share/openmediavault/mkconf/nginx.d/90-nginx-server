@@ -208,7 +208,9 @@ generate_nginx_config()
 {
     local size
     size=$(omv_config_get "$OMV_PLUGIN_XPATH/server_names_hash_bucket_size")
-    echo "server_names_hash_bucket_size $size;" > "$OMV_NGINX_CUSTOM_CONF"
+	if [ $size -gt 0 ]; then 
+		echo "server_names_hash_bucket_size $size;" > "$OMV_NGINX_CUSTOM_CONF"
+	fi
 }
 
 # Remove the current configuration files if they exists.
